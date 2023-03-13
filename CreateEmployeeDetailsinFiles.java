@@ -28,16 +28,26 @@ class  EmployeeStore {
         ObjStream.writeObject(employeeDetails);
         ObjStream.close();
     }
-    public void Char(){
-        String FILE_PATH = "Praveen.txt";
-        File fileUtil = new File(FILE_PATH);
-        System.out.println("No. of characters in file: " + fileUtil.length());
+
+    public void readWholeFile() throws IOException {
+        File f = new File("Praveen.txt");
+        FileReader fReaderObj
+                = new FileReader(f);
+        //char[] chArr = new char[10];// wasted the memory
+        char[] chaArr = new char[(int) f.length()];// create an array of required size
+        fReaderObj.read(chaArr);
+        for (char ch : chaArr) {
+            System.out.print(ch);
+        }
+        fReaderObj.close();
     }
-    public static void main(String[] args) throws IOException{
+
+    public static void main(String[] args) throws IOException {
         EmployeeStore employeeStore = new EmployeeStore();
         employeeStore.EmployeeFile();
-        employeeStore.Char();
+        employeeStore.readWholeFile();
     }
 }
+
 
 
