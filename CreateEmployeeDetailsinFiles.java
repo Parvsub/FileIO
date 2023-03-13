@@ -26,7 +26,14 @@ class  EmployeeStore{
         System.out.println(employeeDetails);
         ObjectOutputStream ObjStream = new ObjectOutputStream(new FileOutputStream(file));
         ObjStream.writeObject(employeeDetails);
+        FileReader fileReaderObj = new FileReader(file);
+        char[] charsArr = new char[(int) file.length()];
+        fileReaderObj.read(charsArr);
+        for (char ch : charsArr){
+            System.out.print(ch);
+        }
         ObjStream.close();
+        fileReaderObj.close();
     }
 }
 
