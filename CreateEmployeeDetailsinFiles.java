@@ -19,21 +19,25 @@ public class CreateEmployeeDetailsinFiles implements Serializable {
                 ", salary=" + salary + '}';
     }
 }
-class  EmployeeStore{
-    public static void main(String[] args) throws IOException {
+class  EmployeeStore {
+    public void EmployeeFile() throws IOException {
         File file = new File("Praveen.txt");
-        CreateEmployeeDetailsinFiles employeeDetails = new CreateEmployeeDetailsinFiles(23415,"Praveen",45000);
+        CreateEmployeeDetailsinFiles employeeDetails = new CreateEmployeeDetailsinFiles(23415, "Praveen", 45000);
         System.out.println(employeeDetails);
         ObjectOutputStream ObjStream = new ObjectOutputStream(new FileOutputStream(file));
         ObjStream.writeObject(employeeDetails);
-        FileReader fileReaderObj = new FileReader(file);
-        char[] charsArr = new char[(int) file.length()];
-        fileReaderObj.read(charsArr);
-        for (char ch : charsArr){
-            System.out.print(ch);
-        }
         ObjStream.close();
-        fileReaderObj.close();
+    }
+    public void Char(){
+        String FILE_PATH = "Praveen.txt";
+        File fileUtil = new File(FILE_PATH);
+        System.out.println("No. of characters in file: " + fileUtil.length());
+    }
+    public static void main(String[] args) throws IOException{
+        EmployeeStore employeeStore = new EmployeeStore();
+        employeeStore.EmployeeFile();
+        employeeStore.Char();
     }
 }
+
 
