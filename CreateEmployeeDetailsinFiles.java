@@ -19,9 +19,9 @@ public class CreateEmployeeDetailsinFiles implements Serializable {
                 ", salary=" + salary + '}';
     }
 }
-class EmployeeStore{
+class  EmployeeStore{
     public static void main(String[] args) throws IOException {
-        File file = new File("C:\\Users\\bodap\\OneDrive\\Desktop\\Praveen");
+        File file = new File("Praveen.txt");
         CreateEmployeeDetailsinFiles employeeDetails = new CreateEmployeeDetailsinFiles(23415,"Praveen",45000);
         System.out.println(employeeDetails);
         ObjectOutputStream ObjStream = new ObjectOutputStream(new FileOutputStream(file));
