@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class EmployeePayrollData {
-    public  static List<CreateEmployeeDetails> empList = new ArrayList<>();
+    public  static List<CreateEmployeeDetailsinFilesStore> empList = new ArrayList<>();
 
     public void readEmployeeData(Scanner scanner){
         System.out.println("Enter the id:");
@@ -14,7 +14,7 @@ public class EmployeePayrollData {
         String name = scanner.next();
         System.out.println("Enter the Salary:");
         double salary = scanner.nextInt();
-        empList.add(new CreateEmployeeDetails(id,name,salary));
+        empList.add(new CreateEmployeeDetailsinFilesStore(id,name,salary));
     }
     public void writeEmployeeData(){
         empList.forEach(System.out::println);
