@@ -29,14 +29,14 @@ class  EmployeeStore {
         ObjStream.close();
     }
 
-    public void readWholeFile() throws IOException {
-        File f = new File("Praveen.txt");
-        FileReader fReaderObj
+      public void readFile() throws IOException {
+          File f = new File("Praveen.txt");
+          FileReader fReaderObj
                 = new FileReader(f);
         //char[] chArr = new char[10];// wasted the memory
-        char[] chaArr = new char[(int) f.length()];// create an array of required size
-        fReaderObj.read(chaArr);
-        for (char ch : chaArr) {
+          char[] chaArr = new char[(int) f.length()];// create an array of required size
+          fReaderObj.read(chaArr);
+          for (char ch : chaArr) {
             System.out.print(ch);
         }
         fReaderObj.close();
@@ -45,7 +45,7 @@ class  EmployeeStore {
     public static void main(String[] args) throws IOException {
         EmployeeStore employeeStore = new EmployeeStore();
         employeeStore.EmployeeFile();
-        employeeStore.readWholeFile();
+        employeeStore.readFile();
     }
 }
 
