@@ -2,12 +2,12 @@ package com.employeeserviceproblem;
 
 import java.io.*;
 
-public class CreateEmployeeDetailsinFiles implements Serializable {
+public class CreateEmployeeDetailsinFilesStore implements Serializable {
 
     int id;
     String name;
     double salary;
-    public CreateEmployeeDetailsinFiles(int id, String name, double salary) {
+    public CreateEmployeeDetailsinFilesStore(int id, String name, double salary) {
         this.id = id;
         this.name = name;
         this.salary = salary;
@@ -22,7 +22,7 @@ public class CreateEmployeeDetailsinFiles implements Serializable {
 class  EmployeeStore {
     public void EmployeeFile() throws IOException {
         File file = new File("Praveen.txt");
-        CreateEmployeeDetailsinFiles employeeDetails = new CreateEmployeeDetailsinFiles(23415, "Praveen", 45000);
+        CreateEmployeeDetailsinFilesStore employeeDetails = new CreateEmployeeDetailsinFilesStore(23415, "Praveen", 45000);
         System.out.println(employeeDetails);
         ObjectOutputStream ObjStream = new ObjectOutputStream(new FileOutputStream(file));
         ObjStream.writeObject(employeeDetails);
